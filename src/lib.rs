@@ -1,5 +1,7 @@
+extern crate fen;
+
 mod board;
-mod fen;
+mod util;
 
 #[test]
 fn it_works() {

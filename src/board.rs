@@ -1,5 +1,7 @@
 use std::fmt;
 
+use util;
+
 #[derive(Debug)]
 pub struct Board {
     pub white: Army,
@@ -110,6 +112,14 @@ impl Board {
         };
 
         Some(Piece { color: color, piece_type: piece_type })
+    }
+
+    pub fn to_fen(&self) -> String {
+        util::fen_util::to_fen(&self)
+    }
+
+    pub fn from_fen(fen: &str) -> Board {
+        util::fen_util::from_fen(fen)
     }
 }
 
